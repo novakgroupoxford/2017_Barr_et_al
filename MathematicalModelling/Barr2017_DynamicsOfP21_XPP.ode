@@ -1,0 +1,122 @@
+### MODEL NAME
+# Barr 2017 - Dynamics of p21 in hTert-RPE1 cells
+
+### MODEL NOTES
+# This model is described in the article:
+# Endogenous DNA damage mediates the proliferation-quiescence decision via p21 expression
+# Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
+
+# Abstract:
+# Following DNA damage caused by exogenous sources, the tumour suppressor p53 mediates cell cycle arrest via expression of the CDK inhibitor, p21. However, the role of p21 in maintaining genomic stability in the absence of DNA damaging agents is less clear. Using live single cell measurements of endogenous p21 protein in asynchronous cultures, we show that DNA damage incurred over S-phase causes p53-dependent accumulation of p21 across mother G2- and daughter G1-phases. High p21 levels then mediate G1 arrest via CDK inhibition, yet lower levels have no impact on G1 progression, and the ubiquitin ligases CRL4^Cdt2 and SCF^Skp2 couple to degrade p21 prior to the G1/S transition. Through mathematical modelling, we reveal that a bistable switch, created by CRL4^Cdt2, promotes irreversible S-phase entry by keeping p21 levels low, preventing premature S-phase exit upon DNA damage. Thus, we characterise how p21 levels regulate the proliferation-quiescence decision to maintain genomic stability.
+
+### MODEL STATES
+MrnaP21' = kSyMrna + kSyMrnaP53*P53 - kDeMrna*MrnaP21
+MrnaCy'  = kSyMrna                  - kDeMrna*MrnaCy
+MrnaP53' = kSyMrna                  - kDeMrna*MrnaP53
+
+tP21' = kSyP21*MrnaP21 - rDeP21*tP21
+tCy'  = kSyCy *MrnaCy  - rDeCy *tCy
+
+CyP21' = kAsCyP21*P21*Cy - (kDsCyP21+rDeP21+rDeCy)*CyP21
+
+aPcna' = kImPc - kAsPcP21*P21*aPcna + (kDsPcP21+rDeP21)*iPcna - (kExPc+kAsRcPc*pRc)*aPcna + (kDsRcPc + rDsRc)*aRc
+iPcna' =         kAsPcP21*P21*aPcna - (kDsPcP21+rDeP21)*iPcna - (kExPc+kAsRcPc*pRc)*iPcna + (kDsRcPc + rDsRc)*iRc
+
+Rc'  = - rPhRc*Rc + kDpRc*pRc                                                                     - rDsRc*Rc
+pRc' =   rPhRc*Rc - kDpRc*pRc                     - kAsRcPc*(aPcna+iPcna)*pRc + kDsRcPc*(aRc+iRc) - rDsRc*pRc
+aRc' = - kAsPcP21*P21*aRc + (kDsPcP21+rDeP21)*iRc + kAsRcPc* aPcna       *pRc - kDsRcPc*aRc       - rDsRc*aRc
+iRc' =   kAsPcP21*P21*aRc - (kDsPcP21+rDeP21)*iRc + kAsRcPc*       iPcna *pRc - kDsRcPc*iRc       - rDsRc*iRc
+
+Dna' = kSyDna*aRc
+
+P53' = kSyP53*MrnaP53 - rDeP53*P53
+Dam' = kGeDam + kGeDamArc*aRc - rReDam*Dam
+
+### INITIAL CONDITIONS
+init tP21=0.72, aPcna=0.5, Rc=1
+init MrnaP21=1, MrnaCy=1, MrnaP53=1
+
+### ALGEBRAIC EQUATIONS
+Cy    = tCy   - CyP21
+P21   = tP21  - CyP21 - iPcna - iRc
+tPcna = aPcna + iPcna + aRc   + iRc
+
+### AUXILIARY QUANTITIES (for plotting purposes)
+aux Cy    = Cy
+aux P21   = P21
+aux tPcna = tPcna
+
+### REACTION RATES
+rPhRc  = kPhRc*Cy^n / (jCy^n + Cy^n)
+rDeCy  = kDeCy  + kDeCyCy *Skp2*Cy
+rDeP21 = kDeP21 + kDeP21Cy*Skp2*Cy + kDeP21aRc*Cdt2*aRc
+rDeP53 = kDeP53 / (jP53 + Dam)
+rReDam = kReDam + kReDamP53*P53 / (jDam + Dam)
+
+rDsRc = heav(DNA-1)
+
+### MODEL PARAMETERS
+par Skp2=1, Cdt2=1
+
+par kSyMrna=0.02,  kSyMrnaP53=0.08, kDeMrna=0.02
+par kSyP21=0.0018, kDeP21=0.0025,   kDeP21Cy=0.007, kDeP21aRc=1
+par kSyCy=0.005,   kAsCyP21=1,      kDsCyP21=0.05,  kDeCy=0.002, kDeCyCy=0.0002
+
+par kImPc=0.003,  kExPc=0.006,   kPhRc=0.1,    kDpRc=0.01,    jCy=1.8, n=6
+par kAsRcPc=0.01, kDsRcPc=0.001, kAsPcP21=100, kDsPcP21=0.01, kSyDna=0.007
+
+par kSyP53=0.05,  kDeP53=0.05,     jP53=0.01
+par kGeDam=0.001, kGeDamArc=0.005, kReDam=0.001, kReDamP53=0.005, jDam=0.5
+
+### PARAMETER DESCRIPTION
+# Skp2 (AU): relative Skp2 level
+# Cdt2 (AU): relative Cdt2 level
+
+# kSyMrna (AU/min): constitutive mRNA synthesis
+# kSyMrnaP53 (1/min): p53-dependent synthesis of p21 mRNAs
+# kDeMrna (1/min): mRNA degradation
+
+# kSyP21 (1/min): constitutive p21 synthesis
+# kDeP21 (1/min): constitutive p21 degradation
+# kDeP21Cy (1/(AU*min)): Cyclin:CDK2-mediated p21 degradation (Skp2-dependent)
+# kDeP21aRc (1/(AU*min)): aRC-mediated p21 degradation (Cdt2-dependent)
+
+# kSyCy (1/min): cyclin synthesis
+# kAsCyP21 (1/(AU*min)): association of Cyclin:CDK2 and p21
+# kDsCyP21 (1/min): dissociation of Cyclin:CDK2:p21 complexes
+# kDeCy (1/min): constitutive cyclin degradation
+# kDeCyCy (1/(AU*min)): Cyclin:CDK2-mediated cyclin degradation (Skp2-dependent)
+
+# kImPc (AU/min): PCNA import into the nucleus
+# kExPc (1/min):  PCNA export from the nucleus
+
+# kPhRc (1/min): Cyclin:CDK2-mediated phosphorylation/priming of RCs
+# kDpRc (1/min): dephosphorylation of pRCs
+# jCy (AU): CDK2 threshold for the phosphorylation/priming of RCs
+# n (-): hill coefficient for the phosphorylation/priming of RCs
+# kAsRcPc (1/(AU*min)): association of phosphorylated/primed RCs and PCNA
+# kDsRcPc (1/min): dissociation of pRC:PCNA complexes
+# kAsPcP21 (1/(AU*min)): association of PCNA and p21
+# kDsPcP21 (1/min): dissociation of PCNA:p21 complexes
+# kSyDna (1/min): DNA synthesis by active RCs
+
+# kSyP53 (1/min): constitutive p53 synthesis
+# kDeP53 (AU/min): DNA damage-dependent degradation of p53
+# jP53 (AU): inhibition constant of p53 degradation by DNA damage
+
+# kGeDam (AU/min): random DNA damage
+# kGeDamArc (1/min): DNA damage due to DNA replication
+# kReDam (1/min): p53-independent DNA damage repair
+# kReDamP53 (1/min): p53-dependent DNA damage repair
+# jDam (AU): DNA damage threshold for repair
+
+### XppAut SETTINGS
+@ Method=stiff, Total=1500, Bounds=100, Dt=1
+@ Xplot=t, Xlo=0, Xhi=1500, Ylo=0, Yhi=3
+@ Nplot=5, Yp1=tP21, Yp2=tCy, Yp3=Cy, Yp4=tPcna, Yp5=aRc
+
+@ Ntst=50, Nmax=1000000, Npr=1000
+@ Ds=.01, Dsmin=.001, Dsmax=.05, ParMin=-100, ParMax=2
+@ AutoVar=tP21, AutoXmin=0, AutoXmax=2, AutoYmin=0, AutoYmax=2
+
+done
