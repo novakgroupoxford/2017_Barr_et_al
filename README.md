@@ -1,7 +1,7 @@
 # 2017_Barr_et_al
 
 Custom code for the article:
-"Endogenous DNA damage mediates the proliferation-quiescence decision via p21 expression"
+"DNA damage during S-phase mediates the proliferation-quiescence decision in the subsequent G1 via p21 expression"
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
 
 This repository contains two folders providing custom-made Matlab scripts for cell tracking and feature extraction ('Cell Tracking'), and different versions of the mathematical model used in the article ('Mathematical Modelling').
