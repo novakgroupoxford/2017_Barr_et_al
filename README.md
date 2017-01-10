@@ -8,7 +8,7 @@ This repository contains two folders providing custom-made Matlab scripts for ce
 
 ## Cell Tracking
 
-This folder contains the set of scripts and code used for tracking. Whilst we make the code avaiable, due to the size of the time series imaging files, please contact us with regards to example data with which to test the script out on if you are less fami9liar with matlab.
+This folder contains the set of scripts and code used for tracking. Whilst we make the code avaiable, due to the size of the time series imaging files, please contact us with regards to example data with which to test the script out on.
 
 ## Tracking Data
 
