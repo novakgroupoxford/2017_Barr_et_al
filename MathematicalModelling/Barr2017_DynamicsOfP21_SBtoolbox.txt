@@ -3,7 +3,7 @@ Barr 2017 - Dynamics of p21 in hTert-RPE1 cells
 
 ********** MODEL NOTES
 This model is described in the article:
-Endogenous DNA damage mediates the proliferation-quiescence decision via p21 expression
+DNA damage during S-phase mediates the proliferation-quiescence decision in the subsequent G1 via p21 expression
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
 
 Abstract:

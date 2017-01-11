@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.16 (Build 104) (http://www.copasi.org) at 2016-12-07 16:50:25 UTC -->
+<!-- generated with COPASI 4.16 (Build 104) (http://www.copasi.org) at 2017-01-11 13:39:01 UTC -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="16" versionDevel="104" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -254,7 +254,7 @@ Reaction scheme where the products are created from the reactants and the change
     </MiriamAnnotation>
     <Comment>
       This model is described in the article:
-Endogenous DNA damage mediates the proliferation-quiescence decision via p21 expression
+DNA damage during S-phase mediates the proliferation-quiescence decision in the subsequent G1 via p21 expression
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
 
 Abstract:
@@ -3260,7 +3260,7 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
   </ListOfPlots>
   <GUI>
   </GUI>
-  <SBMLReference file="Barr2017_DynamicsOfP21_SBML.xml">
+  <SBMLReference file="Barr2016_DynamicsOfP21_Deterministic.xml">
     <SBMLMap SBMLid="Association_and_dissociation_of_CDK2_Cyclin_and_p21" COPASIkey="Reaction_11"/>
     <SBMLMap SBMLid="Association_and_dissociation_of_PCNA_and_p21" COPASIkey="Reaction_17"/>
     <SBMLMap SBMLid="Association_and_dissociation_of_active_PCNA_and_replication_complexes" COPASIkey="Reaction_21"/>

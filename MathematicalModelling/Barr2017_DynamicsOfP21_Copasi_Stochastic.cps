@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.16 (Build 104) (http://www.copasi.org) at 2016-12-07 16:51:05 UTC -->
+<!-- generated with COPASI 4.16 (Build 104) (http://www.copasi.org) at 2017-01-11 13:40:39 UTC -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="16" versionDevel="104" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -223,7 +223,7 @@ Reaction scheme where the products are created from the reactants and the change
     </MiriamAnnotation>
     <Comment>
       This model is described in the article:
-Endogenous DNA damage mediates the proliferation-quiescence decision via p21 expression
+DNA damage during S-phase mediates the proliferation-quiescence decision in the subsequent G1 via p21 expression
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
 
 Abstract:
@@ -1484,7 +1484,9 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
       </Reaction>
       <Reaction key="Reaction_12" name="Degradation of p21 in CDK2:Cyclin:p21 complexes" reversible="false" fast="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_12">
     <dcterms:created>
       <rdf:Description>
@@ -1493,6 +1495,7 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_11" stoichiometry="1"/>
@@ -2286,7 +2289,9 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
       </Reaction>
       <Reaction key="Reaction_34" name="Association of active PCNA and replication complexes" reversible="false" fast="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_34">
     <dcterms:created>
       <rdf:Description>
@@ -2295,6 +2300,7 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_13" stoichiometry="1"/>
@@ -2420,7 +2426,9 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
       </Reaction>
       <Reaction key="Reaction_38" name="Association of p21 and active replication complexes" reversible="false" fast="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <rdf:Description rdf:about="#Reaction_38">
     <dcterms:created>
       <rdf:Description>
@@ -2429,6 +2437,7 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
     </dcterms:created>
   </rdf:Description>
 </rdf:RDF>
+
         </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_19" stoichiometry="1"/>
@@ -3374,4 +3383,105 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
   </ListOfPlots>
   <GUI>
   </GUI>
+  <SBMLReference file="Barr2016_DynamicsOfP21_Stochastic.xml">
+    <SBMLMap SBMLid="Association_of_CDK2_Cyclin_and_p21" COPASIkey="Reaction_30"/>
+    <SBMLMap SBMLid="Association_of_PCNA_and_p21" COPASIkey="Reaction_32"/>
+    <SBMLMap SBMLid="Association_of_active_PCNA_and_replication_complexes" COPASIkey="Reaction_34"/>
+    <SBMLMap SBMLid="Association_of_inactive_PCNA_and_replication_complexes" COPASIkey="Reaction_36"/>
+    <SBMLMap SBMLid="Association_of_p21_and_active_replication_complexes" COPASIkey="Reaction_38"/>
+    <SBMLMap SBMLid="Cdt2" COPASIkey="Metabolite_31"/>
+    <SBMLMap SBMLid="Cell" COPASIkey="Compartment_1"/>
+    <SBMLMap SBMLid="Constant_flux__irreversible" COPASIkey="Function_6"/>
+    <SBMLMap SBMLid="Cy" COPASIkey="Metabolite_9"/>
+    <SBMLMap SBMLid="CyP21" COPASIkey="Metabolite_11"/>
+    <SBMLMap SBMLid="Dam" COPASIkey="Metabolite_25"/>
+    <SBMLMap SBMLid="Degradation_of_cyclin_in_CDK2_Cyclin_p21_complexes" COPASIkey="Reaction_11"/>
+    <SBMLMap SBMLid="Degradation_of_cyclin_mRNAs" COPASIkey="Reaction_5"/>
+    <SBMLMap SBMLid="Degradation_of_cyclins" COPASIkey="Reaction_10"/>
+    <SBMLMap SBMLid="Degradation_of_p21" COPASIkey="Reaction_8"/>
+    <SBMLMap SBMLid="Degradation_of_p21_in_CDK2_Cyclin_p21_complexes" COPASIkey="Reaction_12"/>
+    <SBMLMap SBMLid="Degradation_of_p21_in_PCNA_p21_complexes" COPASIkey="Reaction_16"/>
+    <SBMLMap SBMLid="Degradation_of_p21_in_inactive_replication_complexes" COPASIkey="Reaction_19"/>
+    <SBMLMap SBMLid="Degradation_of_p21_mRNAs" COPASIkey="Reaction_4"/>
+    <SBMLMap SBMLid="Degradation_of_p53" COPASIkey="Reaction_26"/>
+    <SBMLMap SBMLid="Degradation_of_p53_mRNAs" COPASIkey="Reaction_6"/>
+    <SBMLMap SBMLid="Dephosphorylation_of_replication_complexes" COPASIkey="Reaction_18"/>
+    <SBMLMap SBMLid="Dissassembly_of_RC" COPASIkey="Reaction_21"/>
+    <SBMLMap SBMLid="Dissassembly_of_aRC" COPASIkey="Reaction_23"/>
+    <SBMLMap SBMLid="Dissassembly_of_iRC" COPASIkey="Reaction_24"/>
+    <SBMLMap SBMLid="Dissassembly_of_pRC" COPASIkey="Reaction_22"/>
+    <SBMLMap SBMLid="Dissociation_of_CDK2_Cyclin_and_p21" COPASIkey="Reaction_31"/>
+    <SBMLMap SBMLid="Dissociation_of_PCNA_and_p21" COPASIkey="Reaction_33"/>
+    <SBMLMap SBMLid="Dissociation_of_active_PCNA_and_replication_complexes" COPASIkey="Reaction_35"/>
+    <SBMLMap SBMLid="Dissociation_of_inactive_PCNA_and_replication_complexes" COPASIkey="Reaction_37"/>
+    <SBMLMap SBMLid="Dissociation_of_p21_and_replication_complexes" COPASIkey="Reaction_39"/>
+    <SBMLMap SBMLid="Dna" COPASIkey="Metabolite_23"/>
+    <SBMLMap SBMLid="Export_of_active_PCNA" COPASIkey="Reaction_14"/>
+    <SBMLMap SBMLid="Export_of_inactive_PCNA" COPASIkey="Reaction_15"/>
+    <SBMLMap SBMLid="Import_of_active_PCNA" COPASIkey="Reaction_13"/>
+    <SBMLMap SBMLid="Induction_of_DNA_damage" COPASIkey="Reaction_27"/>
+    <SBMLMap SBMLid="Induction_of_DNA_damage_by_replication" COPASIkey="Reaction_28"/>
+    <SBMLMap SBMLid="MrnaCy" COPASIkey="Metabolite_3"/>
+    <SBMLMap SBMLid="MrnaP21" COPASIkey="Metabolite_1"/>
+    <SBMLMap SBMLid="MrnaP53" COPASIkey="Metabolite_5"/>
+    <SBMLMap SBMLid="P21" COPASIkey="Metabolite_7"/>
+    <SBMLMap SBMLid="P53" COPASIkey="Metabolite_27"/>
+    <SBMLMap SBMLid="Phosphorylation_priming_of_replication_complexes" COPASIkey="Reaction_17"/>
+    <SBMLMap SBMLid="Rc" COPASIkey="Metabolite_15"/>
+    <SBMLMap SBMLid="Repair_of_DNA_damage" COPASIkey="Reaction_29"/>
+    <SBMLMap SBMLid="Skp2" COPASIkey="Metabolite_29"/>
+    <SBMLMap SBMLid="Synthesis_of_DNA" COPASIkey="Reaction_20"/>
+    <SBMLMap SBMLid="Synthesis_of_cyclin_mRNAs" COPASIkey="Reaction_2"/>
+    <SBMLMap SBMLid="Synthesis_of_cyclins" COPASIkey="Reaction_9"/>
+    <SBMLMap SBMLid="Synthesis_of_p21" COPASIkey="Reaction_7"/>
+    <SBMLMap SBMLid="Synthesis_of_p21_mRNAs" COPASIkey="Reaction_0"/>
+    <SBMLMap SBMLid="Synthesis_of_p21_mRNAs_by_p53" COPASIkey="Reaction_1"/>
+    <SBMLMap SBMLid="Synthesis_of_p53" COPASIkey="Reaction_25"/>
+    <SBMLMap SBMLid="Synthesis_of_p53_mRNAs" COPASIkey="Reaction_3"/>
+    <SBMLMap SBMLid="aPcna" COPASIkey="Metabolite_13"/>
+    <SBMLMap SBMLid="aRc" COPASIkey="Metabolite_19"/>
+    <SBMLMap SBMLid="iPcna" COPASIkey="Metabolite_33"/>
+    <SBMLMap SBMLid="iRc" COPASIkey="Metabolite_21"/>
+    <SBMLMap SBMLid="jCy" COPASIkey="ModelValue_16"/>
+    <SBMLMap SBMLid="jDam" COPASIkey="ModelValue_30"/>
+    <SBMLMap SBMLid="jP53" COPASIkey="ModelValue_25"/>
+    <SBMLMap SBMLid="kAsCyP21" COPASIkey="ModelValue_8"/>
+    <SBMLMap SBMLid="kAsPcP21" COPASIkey="ModelValue_20"/>
+    <SBMLMap SBMLid="kAsRcPc" COPASIkey="ModelValue_18"/>
+    <SBMLMap SBMLid="kDeCy" COPASIkey="ModelValue_10"/>
+    <SBMLMap SBMLid="kDeCyCy" COPASIkey="ModelValue_11"/>
+    <SBMLMap SBMLid="kDeMrna" COPASIkey="ModelValue_2"/>
+    <SBMLMap SBMLid="kDeP21" COPASIkey="ModelValue_4"/>
+    <SBMLMap SBMLid="kDeP21Cy" COPASIkey="ModelValue_5"/>
+    <SBMLMap SBMLid="kDeP21aRc" COPASIkey="ModelValue_6"/>
+    <SBMLMap SBMLid="kDeP53" COPASIkey="ModelValue_24"/>
+    <SBMLMap SBMLid="kDpRc" COPASIkey="ModelValue_15"/>
+    <SBMLMap SBMLid="kDsCyP21" COPASIkey="ModelValue_9"/>
+    <SBMLMap SBMLid="kDsPcP21" COPASIkey="ModelValue_21"/>
+    <SBMLMap SBMLid="kDsRcPc" COPASIkey="ModelValue_19"/>
+    <SBMLMap SBMLid="kExPc" COPASIkey="ModelValue_13"/>
+    <SBMLMap SBMLid="kGeDam" COPASIkey="ModelValue_26"/>
+    <SBMLMap SBMLid="kGeDamArc" COPASIkey="ModelValue_27"/>
+    <SBMLMap SBMLid="kImPc" COPASIkey="ModelValue_12"/>
+    <SBMLMap SBMLid="kPhRc" COPASIkey="ModelValue_14"/>
+    <SBMLMap SBMLid="kReDam" COPASIkey="ModelValue_28"/>
+    <SBMLMap SBMLid="kReDamP53" COPASIkey="ModelValue_29"/>
+    <SBMLMap SBMLid="kSyCy" COPASIkey="ModelValue_7"/>
+    <SBMLMap SBMLid="kSyDna" COPASIkey="ModelValue_22"/>
+    <SBMLMap SBMLid="kSyMrna" COPASIkey="ModelValue_0"/>
+    <SBMLMap SBMLid="kSyMrnaP53" COPASIkey="ModelValue_1"/>
+    <SBMLMap SBMLid="kSyP21" COPASIkey="ModelValue_3"/>
+    <SBMLMap SBMLid="kSyP53" COPASIkey="ModelValue_23"/>
+    <SBMLMap SBMLid="n" COPASIkey="ModelValue_17"/>
+    <SBMLMap SBMLid="pRc" COPASIkey="Metabolite_17"/>
+    <SBMLMap SBMLid="rDeCy" COPASIkey="Function_41"/>
+    <SBMLMap SBMLid="rDeP21" COPASIkey="Function_40"/>
+    <SBMLMap SBMLid="rDeP53" COPASIkey="Function_44"/>
+    <SBMLMap SBMLid="rDsRc" COPASIkey="Function_43"/>
+    <SBMLMap SBMLid="rPhRc" COPASIkey="Function_42"/>
+    <SBMLMap SBMLid="rReDam" COPASIkey="Function_45"/>
+    <SBMLMap SBMLid="tCy" COPASIkey="Metabolite_37"/>
+    <SBMLMap SBMLid="tP21" COPASIkey="Metabolite_35"/>
+    <SBMLMap SBMLid="tPcna" COPASIkey="Metabolite_39"/>
+  </SBMLReference>
 </COPASI>
