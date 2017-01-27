@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created by COPASI version 4.16 (Build 104) on 2017-01-11 13:46 with libSBML version 5.11.1. -->
+<!-- Created by COPASI version 4.16 (Build 104) on 2017-01-27 10:52 with libSBML version 5.11.1. -->
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:render="http://www.sbml.org/sbml/level3/version1/render/version1" level="3" version="1" layout:required="false" render:required="false">
   <model metaid="COPASI0" id="Barr_2017___Dynamics_of_p21_in_hTert_RPE1_cells" name="Barr 2017 - Dynamics of p21 in hTert-RPE1 cells" substanceUnits="substance" timeUnits="time" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="substance">
     <notes>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <pre>This model is described in the article:
-DNA damage during S-phase mediates the proliferation-quiescence decision in the subsequent G1 via p21 expression
+DNA damage during S-phase mediates the proliferation quiescence decision in the subsequent G1 via p21 expression
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
 
 Abstract:
-Following DNA damage caused by exogenous sources, the tumour suppressor p53 mediates cell cycle arrest via expression of the CDK inhibitor, p21. However, the role of p21 in maintaining genomic stability in the absence of DNA damaging agents is less clear. Using live single cell measurements of endogenous p21 protein in asynchronous cultures, we show that DNA damage incurred over S-phase causes p53-dependent accumulation of p21 across mother G2- and daughter G1-phases. High p21 levels then mediate G1 arrest via CDK inhibition, yet lower levels have no impact on G1 progression, and the ubiquitin ligases CRL4^Cdt2 and SCF^Skp2 couple to degrade p21 prior to the G1/S transition. Through mathematical modelling, we reveal that a bistable switch, created by CRL4^Cdt2, promotes irreversible S-phase entry by keeping p21 levels low, preventing premature S-phase exit upon DNA damage. Thus, we characterise how p21 levels regulate the proliferation-quiescence decision to maintain genomic stability.</pre>
+Following DNA damage caused by exogenous sources, such as ionising radiation, the tumour suppressor p53 mediates cell cycle arrest via expression of the CDK inhibitor, p21. However, the role of p21 in maintaining genomic stability in the absence of exogenous DNA damaging agents is unclear. Here, using live single cell measurements of p21 protein in proliferating cultures, we show that naturally-occurring DNA damage incurred over S-phase causes p53-dependent accumulation of p21 during mother G2- and daughter G1-phases. High p21 levels mediate G1 arrest via CDK inhibition, yet lower levels have no impact on G1 progression, and the ubiquitin ligases CRL4^Cdt2 and SCF^Skp2 couple to degrade p21 prior to the G1/S transition. Mathematical modelling reveals that a bistable switch, created by CRL4^Cdt2, promotes irreversible S-phase entry by keeping p21 levels low, preventing premature S-phase exit upon DNA damage. Thus, we characterise how p21 regulates the proliferation-quiescence decision to maintain genomic stability.</pre>
       </body>
     </notes>
     <annotation>
@@ -89,14 +89,14 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI89" id="rDsRc" name="rDsRc">
+      <functionDefinition metaid="COPASI89" id="rDeCy" name="rDeCy">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               <rdf:Description rdf:about="#COPASI89">
                 <dcterms:created>
                   <rdf:Description>
-                    <dcterms:W3CDTF>2016-06-13T13:48:37Z</dcterms:W3CDTF>
+                    <dcterms:W3CDTF>2016-06-13T12:04:01Z</dcterms:W3CDTF>
                   </rdf:Description>
                 </dcterms:created>
               </rdf:Description>
@@ -106,107 +106,42 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
-              <ci> Dna </ci>
+              <ci> kDeCy </ci>
             </bvar>
             <bvar>
-              <ci> Rc </ci>
-            </bvar>
-            <piecewise>
-              <piece>
-                <cn> 0 </cn>
-                <apply>
-                  <lt/>
-                  <ci> Dna </ci>
-                  <cn> 1 </cn>
-                </apply>
-              </piece>
-              <otherwise>
-                <piecewise>
-                  <piece>
-                    <apply>
-                      <times/>
-                      <cn> 1 </cn>
-                      <ci> Rc </ci>
-                    </apply>
-                    <apply>
-                      <gt/>
-                      <ci> Dna </ci>
-                      <cn> 1 </cn>
-                    </apply>
-                  </piece>
-                  <otherwise>
-                    <apply>
-                      <times/>
-                      <cn> 0.5 </cn>
-                      <ci> Rc </ci>
-                    </apply>
-                  </otherwise>
-                </piecewise>
-              </otherwise>
-            </piecewise>
-          </lambda>
-        </math>
-      </functionDefinition>
-      <functionDefinition metaid="COPASI90" id="rReDam" name="rReDam">
-        <annotation>
-          <COPASI xmlns="http://www.copasi.org/static/sbml">
-            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI90">
-                <dcterms:created>
-                  <rdf:Description>
-                    <dcterms:W3CDTF>2016-06-13T14:01:19Z</dcterms:W3CDTF>
-                  </rdf:Description>
-                </dcterms:created>
-              </rdf:Description>
-            </rdf:RDF>
-          </COPASI>
-        </annotation>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> kReDam </ci>
+              <ci> kDeCyCy </ci>
             </bvar>
             <bvar>
-              <ci> kReDamP53 </ci>
+              <ci> Skp2 </ci>
             </bvar>
             <bvar>
-              <ci> P53 </ci>
+              <ci> Cy </ci>
             </bvar>
             <bvar>
-              <ci> jDam </ci>
-            </bvar>
-            <bvar>
-              <ci> Dam </ci>
+              <ci> substrate </ci>
             </bvar>
             <apply>
               <times/>
               <apply>
                 <plus/>
-                <ci> kReDam </ci>
+                <ci> kDeCy </ci>
                 <apply>
-                  <divide/>
-                  <apply>
-                    <times/>
-                    <ci> kReDamP53 </ci>
-                    <ci> P53 </ci>
-                  </apply>
-                  <apply>
-                    <plus/>
-                    <ci> jDam </ci>
-                    <ci> Dam </ci>
-                  </apply>
+                  <times/>
+                  <ci> kDeCyCy </ci>
+                  <ci> Skp2 </ci>
+                  <ci> Cy </ci>
                 </apply>
               </apply>
-              <ci> Dam </ci>
+              <ci> substrate </ci>
             </apply>
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI91" id="rDeP21" name="rDeP21">
+      <functionDefinition metaid="COPASI90" id="rDeP21" name="rDeP21">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI91">
+              <rdf:Description rdf:about="#COPASI90">
                 <dcterms:created>
                   <rdf:Description>
                     <dcterms:W3CDTF>2016-06-13T11:55:31Z</dcterms:W3CDTF>
@@ -265,14 +200,14 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
           </lambda>
         </math>
       </functionDefinition>
-      <functionDefinition metaid="COPASI92" id="rDeCy" name="rDeCy">
+      <functionDefinition metaid="COPASI91" id="rDsRc" name="rDsRc">
         <annotation>
           <COPASI xmlns="http://www.copasi.org/static/sbml">
             <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-              <rdf:Description rdf:about="#COPASI92">
+              <rdf:Description rdf:about="#COPASI91">
                 <dcterms:created>
                   <rdf:Description>
-                    <dcterms:W3CDTF>2016-06-13T12:04:01Z</dcterms:W3CDTF>
+                    <dcterms:W3CDTF>2016-06-13T13:48:37Z</dcterms:W3CDTF>
                   </rdf:Description>
                 </dcterms:created>
               </rdf:Description>
@@ -282,33 +217,98 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
-              <ci> kDeCy </ci>
+              <ci> Dna </ci>
             </bvar>
             <bvar>
-              <ci> kDeCyCy </ci>
+              <ci> Rc </ci>
+            </bvar>
+            <piecewise>
+              <piece>
+                <cn> 0 </cn>
+                <apply>
+                  <lt/>
+                  <ci> Dna </ci>
+                  <cn> 1 </cn>
+                </apply>
+              </piece>
+              <otherwise>
+                <piecewise>
+                  <piece>
+                    <apply>
+                      <times/>
+                      <cn> 1 </cn>
+                      <ci> Rc </ci>
+                    </apply>
+                    <apply>
+                      <gt/>
+                      <ci> Dna </ci>
+                      <cn> 1 </cn>
+                    </apply>
+                  </piece>
+                  <otherwise>
+                    <apply>
+                      <times/>
+                      <cn> 0.5 </cn>
+                      <ci> Rc </ci>
+                    </apply>
+                  </otherwise>
+                </piecewise>
+              </otherwise>
+            </piecewise>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI92" id="rReDam" name="rReDam">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI92">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2016-06-13T14:01:19Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> kReDam </ci>
             </bvar>
             <bvar>
-              <ci> Skp2 </ci>
+              <ci> kReDamP53 </ci>
             </bvar>
             <bvar>
-              <ci> Cy </ci>
+              <ci> P53 </ci>
             </bvar>
             <bvar>
-              <ci> substrate </ci>
+              <ci> jDam </ci>
+            </bvar>
+            <bvar>
+              <ci> Dam </ci>
             </bvar>
             <apply>
               <times/>
               <apply>
                 <plus/>
-                <ci> kDeCy </ci>
+                <ci> kReDam </ci>
                 <apply>
-                  <times/>
-                  <ci> kDeCyCy </ci>
-                  <ci> Skp2 </ci>
-                  <ci> Cy </ci>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> kReDamP53 </ci>
+                    <ci> P53 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> jDam </ci>
+                    <ci> Dam </ci>
+                  </apply>
                 </apply>
               </apply>
-              <ci> substrate </ci>
+              <ci> Dam </ci>
             </apply>
           </lambda>
         </math>
@@ -1501,6 +1501,15 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
           </apply>
         </math>
       </assignmentRule>
+      <assignmentRule variable="tCy">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Cy </ci>
+            <ci> CyP21 </ci>
+          </apply>
+        </math>
+      </assignmentRule>
       <assignmentRule variable="tPcna">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
@@ -1509,15 +1518,6 @@ Following DNA damage caused by exogenous sources, the tumour suppressor p53 medi
             <ci> iPcna </ci>
             <ci> aRc </ci>
             <ci> iRc </ci>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule variable="tCy">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <plus/>
-            <ci> Cy </ci>
-            <ci> CyP21 </ci>
           </apply>
         </math>
       </assignmentRule>
