@@ -8,11 +8,9 @@ This repository contains two folders providing custom-made Matlab scripts for ce
 
 ## Cell Tracking
 
-This folder contains the set of scripts and code used for tracking. Whilst we make the code avaiable, due to the size of the time series imaging files, please contact us with regards to example data with which to test the script out on.
+This folder contains the set of scripts and code used for tracking. Whilst we make the code available, due to the size of the time series imaging files, please contact us with regards to example data with which to test the script out on.
 
-## Tracking Data
-
-This folder contains all of the tracking data (except actual images due to file size) used for figures and data within the paper. Each sub-folder is associated with a specific figure panel shoiwng cell tracking, and contains scripts to view the individual tracks.
+Tracking data (except actual images due to file size) used for figures and data within the paper are available from http://socooper.com/downloads/NucliTrack.zip. This package contains sub-folders, each associated with a specific figure panel.
 
 ## Mathematical Modelling
 
