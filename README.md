@@ -1,6 +1,6 @@
 # 2017_Barr_et_al
 
-Custom code for the article:
+Custom code for the article: <br>
 "DNA damage during S-phase mediates the proliferation-quiescence decision in the subsequent G1 via p21 expression" <br>
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal <br>
 Nature Communications, March 2017, 8:14728, doi: 10.1038/ncomms14728
