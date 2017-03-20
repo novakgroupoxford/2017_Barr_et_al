@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.16 (Build 104) (http://www.copasi.org) at 2017-01-27 10:52:17 UTC -->
+<!-- generated with COPASI 4.16 (Build 104) (http://www.copasi.org) at 2017-03-20 11:42:09 UTC -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="16" versionDevel="104" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -256,6 +256,7 @@ Reaction scheme where the products are created from the reactants and the change
       This model is described in the article:
 DNA damage during S-phase mediates the proliferation quiescence decision in the subsequent G1 via p21 expression
 Alexis R. Barr, Samuel Cooper, Frank S. Heldt, Francesca Butera, Henriette Stoy, Jörg Mansfeld, Bela Novak, Chris Bakal
+Nature Communications, March 2017, 8:14728, doi: 10.1038/ncomms14728
 
 Abstract:
 Following DNA damage caused by exogenous sources, such as ionising radiation, the tumour suppressor p53 mediates cell cycle arrest via expression of the CDK inhibitor, p21. However, the role of p21 in maintaining genomic stability in the absence of exogenous DNA damaging agents is unclear. Here, using live single cell measurements of p21 protein in proliferating cultures, we show that naturally-occurring DNA damage incurred over S-phase causes p53-dependent accumulation of p21 during mother G2- and daughter G1-phases. High p21 levels mediate G1 arrest via CDK inhibition, yet lower levels have no impact on G1 progression, and the ubiquitin ligases CRL4^Cdt2 and SCF^Skp2 couple to degrade p21 prior to the G1/S transition. Mathematical modelling reveals that a bistable switch, created by CRL4^Cdt2, promotes irreversible S-phase entry by keeping p21 levels low, preventing premature S-phase exit upon DNA damage. Thus, we characterise how p21 regulates the proliferation-quiescence decision to maintain genomic stability.
